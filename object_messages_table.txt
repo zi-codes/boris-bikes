@@ -1,0 +1,9 @@
++--+--+--+--+--+
+| OBJECTS         | MESSAGES  |
++--+--+--+--+--+
+| Person          |
++--+--+--+--+--+
+| Bike            | Working   |
++--+--+--+--+--+
+| Docking-Station | Release   |
++--+--+--+--+--+
