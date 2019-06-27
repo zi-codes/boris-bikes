@@ -1,4 +1,7 @@
+require_relative './BikeContainer.rb'
+
 class Garage
+  include BikeContainer
   def initialize(broken_bikes = [],fixed_bikes = [])
     @broken_bike_array = broken_bikes
     @fixed_bikes = fixed_bikes

@@ -1,8 +1,9 @@
 require_relative './DockingStation.rb'
 require_relative './garage.rb'
+require_relative './BikeContainer.rb'
 
 class Van
-
+  include BikeContainer
   def initialize(broken_bikes = [],working_bikes = [])
     @broken_bikes = broken_bikes
     @working_bikes = working_bikes

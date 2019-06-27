@@ -36,6 +36,8 @@ describe Van do
 
     expect(van.distribute_bikes_to_docks(dock).length).to eq 7
 
-
+   
   end
+  it_behaves_like  "return bikes"
+
 end
