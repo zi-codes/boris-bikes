@@ -1,15 +1,21 @@
 require 'van'
 
 describe Van do
+  let(:dock) {double :dock}
+  let(:garage) {double :garage}
+  let(:bike) {double :bike}
   it "gets broken bikes from the docking station" do
-    dock = DockingStation.new
-    2.times { dock.dock(Bike.new,false) }
+    allow(dock).to receive(:dock)
+    allow(dock).to receive(:list_broken_bikes).and_return([bike,bike])
+    2.times { dock.dock(bike,false) }
     expect(subject.get_broken_bikes_from_docking_station(dock).length).to eq 2
   end
   it "delivers broken bikes to the garage" do
-    garage = Garage.new
+    allow(garage).to receive(:accept_broken_bikes).and_return([bike,bike])
+    
+    bike1 = instance_double("bike",:working => false)
     broken_bikes = []
-    2.times {broken_bikes << Bike.new(false)}
+    2.times {broken_bikes << bike1}
     van = Van.new(broken_bikes)
     expect(van.deliver_to_garage(garage).length).to eq 2
   end
